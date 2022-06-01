@@ -4,8 +4,6 @@ describe("Testing ToDo list maker", ()=>{
     DatabaseMethod = new CreateDatabase();
     task1 = "Go to the gorcery store"
     task2 = "Go to pay gas bills"
-    //input = document.getElementById('Todo-text')
-    //input.value = task1
   })
 
   it("Should init the app on HTML",()=>{
@@ -45,11 +43,8 @@ describe("Testing ToDo list maker", ()=>{
     expect(domitem.initApp().form).toEqual(form)
     expect(domitem.initApp().section).toEqual(section)
   })
-  it("Should Save a task", () => {
-    //let database = new CreateDatabase();
-    //let task = "Do the dishes"
+  it("Should save a task", () => {
     DatabaseMethod.saveTasks(task1)
-    console.log(DatabaseMethod.database)
     expect(DatabaseMethod.database.length).toBe(1)
     expect(DatabaseMethod.database[0]).toEqual(task1)
     
@@ -62,15 +57,11 @@ describe("Testing ToDo list maker", ()=>{
     expect(DatabaseMethod.database.length).toBe(0)
   })
 
-  /**/it("Should edit tasks",()=>{
+  it("Should edit/modify tasks",()=>{
     DatabaseMethod.saveTasks(task1)
     expect(DatabaseMethod.database[0]).toEqual(task1)
     task1modified = "Go to the superMarket"
     DatabaseMethod.editTask(0, task1modified)
     expect(DatabaseMethod.database[0]).toEqual(task1modified)
-
-    console.log(DatabaseMethod.database[0])
-    
-    //DatabaseMethod.editTask(DatabaseMethod.database[0], task1)
   })
 })

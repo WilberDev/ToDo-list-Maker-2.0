@@ -19,7 +19,7 @@ CreateDatabase.prototype.editTask = function(taskindex, input){
     this.database.splice(taskindex, 1, input)
 }
 
-//app items constructor
+//app Dom items constructor
 function CreateDomItems() {}
 
 
@@ -79,7 +79,6 @@ CreateDomItems.prototype.addtaskevent = function (btn) {
         
         const input = document.querySelector("#Todo-text")
         if (input.value != null && input.value != '') {
-            console.log('I am working ' + input.value)
             DatabaseMethod.saveTasks(input.value) 
             displaylist();
             input.value = "";
@@ -98,7 +97,6 @@ CreateDomItems.prototype.displaylist = function () {
             <button onclick = "CreateDomItems.prototype.deleteTask(${index})" type="submit" id = "delete-btn" class = "delete-btn"> Delete</button>
     `;
     })
-    console.log(savedIndex)
     return document.querySelector('#list-space').innerHTML = writeOnHTML;
 }
 
