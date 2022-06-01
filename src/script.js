@@ -1,25 +1,22 @@
+let savedIndex = 0;
+
 //database constructor
 function CreateDatabase (){
     this.database = []
 }
 //save to database method
 CreateDatabase.prototype.saveTasks = function (tasks) {
-    //alert('Invoke' + this.database)
-    //console.log(tasks)
     this.database.push(tasks)
 }
 
 //delete from database method
 CreateDatabase.prototype.deleteTask = function(taskindex) {
     this.database.splice(taskindex, 1)
-   // CreateDomItems.prototype.displaylist();
 }
 
 //edit database method
 CreateDatabase.prototype.editTask = function(taskindex, input){
-    //console.log(`input to edit ${input}`)
     this.database.splice(taskindex, 1, input)
-    //CreateDomItems.prototype.displaylist();
 }
 
 //app items constructor
@@ -77,7 +74,6 @@ CreateDomItems.prototype.initApp = function () {
 //This method evaluate input value, if ok send it database and call displayer
 CreateDomItems.prototype.addtaskevent = function (btn) {
     const displaylist = this.displaylist;
-    //const saveTasks = DatabaseMethod.saveTasks;
     btn.addEventListener("click", function(prevent) {
         prevent.preventDefault();
         
@@ -106,7 +102,6 @@ CreateDomItems.prototype.displaylist = function () {
     return document.querySelector('#list-space').innerHTML = writeOnHTML;
 }
 
-let savedIndex = 0;
 
 //This method edit any task and send the info to displayer and database to be updated. 
 CreateDomItems.prototype.editTaskEvent = function(taskindex){
@@ -163,12 +158,3 @@ domitem.saveTaskEvent(
     document.getElementById('add-btn'),
     document.getElementById('Todo-text')
 )
-/*domitem.deleteTask(
-    document.getElementById('delete-btn')
-)*/
-
-/*domitem.editTaskEvent(
-    document.getElementById('Todo-text'),
-    document.getElementById('add-btn'),
-    document.getElementById('Save-btn')
-)*/
