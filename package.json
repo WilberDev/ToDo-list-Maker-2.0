@@ -1,0 +1,15 @@
+{
+  "name": "todo-project",
+  "version": "1.0.0",
+  "description": "Saves tasks on a list",
+  "main": "script.js",
+  "scripts": {
+    "test": "jasmine-browser-runner runSpecs"
+  },
+  "author": "Wilber Camilo <wilbecamilo00@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-browser-runner": "^1.0.0",
+    "jasmine-core": "^4.1.1"
+  }
+}
